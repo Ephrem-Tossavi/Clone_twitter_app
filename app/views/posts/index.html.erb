@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+        <header class="header">
+            <img src="https://www.technobezz.com/files/uploads/2020/04/twitter-logo.jpg">
+            <nav>
+            <ul class="top_menu">
+            <li><span>Accueil<span></li>
+            <li><span>Explorer<span></li>
+            <li><span>Notifications<span></li>
+            <li><span>Messages<span></li>
+            <li><span>Profil<span></li>
+            <li><span>Plus<span></li>
+            </ul>
+            </nav>
+        </header>
+        <article class="body_content">
+
+        <p id="notice"><%= notice %></p>
+
+         <h1>Posts</h1>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Content</th>
+                <th colspan="3"></th>
+             </tr>
+            </thead> 
+
+            <tbody>
+          <% @posts.each do |post| %>
+             <tr>
+               <td><%= post.content %></td>
+               <td><%= link_to 'Show', post %></td>
+               <td><%= link_to 'Edit', edit_post_path(post), data: { confirm: 'Are you sure?' }%></td>
+               <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             </tr>
+             <% end %>
+            </tbody>
+         </table>
+
+         <br>
+
+        <%= link_to 'New Post', new_post_path %>
+
+        </article>
+        <footer class="footer">
+            <p>Copyright © 2021 TWITTER_APP_CLONE</p>
+        </footer>
+    </body>
+</html>
