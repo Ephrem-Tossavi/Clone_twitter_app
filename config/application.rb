@@ -8,7 +8,7 @@ module AppClone
   class Application < Rails::Application
     
     config.load_defaults 5.2
-    config.time_zone = 'Porto-Novo'
+    config.time_zone = 'West Central Africa'
     config.active_record.default_timezone = :local
   end
 end
