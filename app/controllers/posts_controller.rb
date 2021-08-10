@@ -32,9 +32,9 @@ class PostsController < ApplicationController
         redirect_to posts_path, notice: "Post was successfully created."
       else
         render :new
+      end
     end
   end
-end
 
   def update
 
@@ -56,11 +56,12 @@ end
 
   private
   
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end 
 
-    def post_params
-      params.require(:post).permit(:content)
-    end
+  def post_params
+    params.require(:post).permit(:content)
+  end
+
 end
