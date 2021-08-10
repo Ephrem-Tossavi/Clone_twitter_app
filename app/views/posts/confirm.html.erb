@@ -1,3 +1,5 @@
+<%= render 'header', post: @post %>
+
 <h3>Send with the following content</h3>
 <%= form_with(model: @post, local: true) do |form| %>
   <%= form.hidden_field :content %>
@@ -5,3 +7,5 @@
   <%= form.submit  "Send" %>
   <%= form.submit "Retour", name: 'back' %>
 <% end %>
+
+<%= render 'footer', post: @post %>
